@@ -1,4 +1,5 @@
 ﻿using DataBaseApp.Data;
+using Microsoft.Maui.Controls.Compatibility.Platform.UWP;
 
 namespace DataBaseApp;
 
@@ -15,9 +16,7 @@ public partial class MainPage : ContentPage
 
 	private async void OnCounterClicked(object sender, EventArgs e)
 	{
-		
-
-		DatabaseItems databaseItems = await DatabaseItems.Instance;
+        DatabaseItems databaseItems = await DatabaseItems.Instance;
 		TableItems items = new TableItems();
 		items.count = 4;
 		await databaseItems.saveItemAsync(items);

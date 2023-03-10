@@ -42,17 +42,14 @@ namespace DataBaseApp.Data
         }
         public Task<int> saveItemAsync(TableItems items)
         {
-            if(items.Id != 0)
-            {
+            if(items.Id != 0){
                 return Databse.UpdateAsync(items);
             }
-            else
-            {   
+            else{   
                 return Databse.InsertAsync(items);
             }
         }       
-        public Task<int> deleteItemAsync(TableItems items)
-        {
+        public Task<int> deleteItemAsync(TableItems items){
                 return Databse.DeleteAsync(items);
         }
 
